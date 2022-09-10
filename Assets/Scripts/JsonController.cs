@@ -28,7 +28,7 @@ public class JsonController : MonoBehaviour
     private void processJsonData(string _url)
     {
         JsonTest data = JsonUtility.FromJson<JsonTest>(_url);
-        Debug.Log(data.player_data.speed);
+        Debug.Log(data.pulpit_data.pulpit_spawn_time);
     }
 
   

@@ -12,14 +12,14 @@ public class JsonTest
 [Serializable]
 public class pulpit_data
 {
-    public int min_pulpit_destroy_time;
-    public int max_pulpit_destroy_time;
+    public float min_pulpit_destroy_time;
+    public float max_pulpit_destroy_time;
     public double pulpit_spawn_time;
 }
 [Serializable]
 public class player_data
 {
-    public int speed;
+    public float speed;
 }
 
 
