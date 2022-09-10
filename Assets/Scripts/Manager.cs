@@ -16,6 +16,8 @@ public class Manager : MonoBehaviour
     public GameObject myPrefab;
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
+
+    public float ttl = 0;
     // Start is called before the first frame update
     [SerializeField]
      GameObject pulpit;
@@ -26,6 +28,8 @@ public class Manager : MonoBehaviour
         
         timerIsRunning = true;
         manager = GameObject.FindWithTag("manager");
+        timeRemaining = manager.GetComponent<JsonController>().randomTime;
+        ttl = manager.GetComponent<JsonController>().destroyTime;
      PlaneInstantiate planeInstantiate=   manager.GetComponent<PlaneInstantiate>();
      myPrefab = planeInstantiate.myPrefab;
     }
@@ -57,7 +61,7 @@ public class Manager : MonoBehaviour
                     case (int)Direction.Right : Instantiate(myPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z-90), Quaternion.identity);
                         break;
                 }
-               Destroy(gameObject,2);
+               Destroy(gameObject,ttl);
                 timerIsRunning = false;
             }
         }

@@ -14,7 +14,7 @@ public class pulpit_data
 {
     public float min_pulpit_destroy_time;
     public float max_pulpit_destroy_time;
-    public double pulpit_spawn_time;
+    public float pulpit_spawn_time;
 }
 [Serializable]
 public class player_data
