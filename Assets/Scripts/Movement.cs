@@ -24,14 +24,13 @@ public class Movement : MonoBehaviour
         Ray ray = new Ray(transform.position, Vector3.down);
         
         grounded = Physics.Raycast(ray, out hit, rayDistance, layers);
-        if (grounded)
-        {
+        
             _vec = transform.localPosition;
             _vec.x += Input.GetAxis("Horizontal") * Time.deltaTime * 8 * speed;
             _vec.z += Input.GetAxis("Vertical") * Time.deltaTime * 8 * speed;
             transform.localPosition = _vec;
 
-        }
+        
 
         if (transform.position.y < -10)
         {    
