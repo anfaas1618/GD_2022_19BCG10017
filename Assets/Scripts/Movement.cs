@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    Vector3 Vec;
+    Vector3 _vec;
     public float speed =23;
+
+    public GameObject canvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +17,16 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()  
     {  
-  
-        Vec = transform.localPosition;
-        Vec.x += Input.GetAxis("Horizontal") * Time.deltaTime * 8*speed;  
-        Vec.z += Input.GetAxis("Vertical") * Time.deltaTime * 8*speed;  
-        transform.localPosition = Vec;  
+        
+        _vec = transform.localPosition;
+        _vec.x += Input.GetAxis("Horizontal") * Time.deltaTime * 8*speed;  
+        _vec.z += Input.GetAxis("Vertical") * Time.deltaTime * 8*speed;  
+        transform.localPosition = _vec;
+        if (transform.position.y < -10)
+        {    
+            canvas.SetActive(true);
+            Destroy(gameObject,1f);
+           
+        }
     } 
 }

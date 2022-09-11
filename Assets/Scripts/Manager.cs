@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,6 +17,8 @@ public class Manager : MonoBehaviour
     public GameObject myPrefab;
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
+    public TMP_Text timerText;
+    private float timeToAdd;
 
     public float ttl = 0;
     // Start is called before the first frame update
@@ -30,25 +33,29 @@ public class Manager : MonoBehaviour
         manager = GameObject.FindWithTag("manager");
         timeRemaining = manager.GetComponent<JsonController>().randomTime;
         ttl = manager.GetComponent<JsonController>().destroyTime;
-     PlaneInstantiate planeInstantiate=   manager.GetComponent<PlaneInstantiate>();
+        timeToAdd = manager.GetComponent<JsonController>().destroyTime;
+        PlaneInstantiate planeInstantiate=   manager.GetComponent<PlaneInstantiate>();
      myPrefab = planeInstantiate.myPrefab;
+     timeToAdd = timeRemaining + timeToAdd;
     }
     
 
     // Update is called once per frame
     void Update()
-    {
+    {timeToAdd -= Time.deltaTime;
         if (timerIsRunning)
         {
-            if (timeRemaining > 0)
+            if (timeRemaining > 0 )
             {
                 timeRemaining -= Time.deltaTime;
+                
+
             }
             else
             {
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
-                int direction = Random.Range(0, 3);
+                int direction = Random.Range(0, 4);
                 
                 switch (direction)
                 {
@@ -60,10 +67,14 @@ public class Manager : MonoBehaviour
                         break;
                     case (int)Direction.Right : Instantiate(myPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z-90), Quaternion.identity);
                         break;
+                       
                 }
+                Score.score++;
                Destroy(gameObject,ttl);
                 timerIsRunning = false;
             }
+           
         }
+        timerText.text = timeToAdd.ToString("F2");
     }
 }
