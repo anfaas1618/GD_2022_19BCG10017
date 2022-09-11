@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -9,7 +10,7 @@ public class Movement : MonoBehaviour
     public LayerMask layers;
     public float rayDistance;
     private bool grounded;
-
+    public TMP_Text ScoreTextGover;
     public GameObject canvas;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class Movement : MonoBehaviour
         if (transform.position.y < -10)
         {    
             canvas.SetActive(true);
+            ScoreTextGover.text = Score.score.ToString();
             Destroy(gameObject,1f);
            
         }
