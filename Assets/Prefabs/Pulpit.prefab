@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 449959508}
   - component: {fileID: 449959510}
   - component: {fileID: 449959509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 7253692181240780176}
   - component: {fileID: 7253692181240780175}
   - component: {fileID: 5871610012081934022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pulpit
   m_TagString: pulpit
   m_Icon: {fileID: 0}
