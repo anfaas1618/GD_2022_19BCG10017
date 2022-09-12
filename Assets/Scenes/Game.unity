@@ -736,6 +736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 449959509, guid: 180f9c5d4a1e80c4fb0e0e8ddb694198, type: 3}
+      propertyPath: m_text
+      value: 3.36
+      objectReference: {fileID: 0}
     - target: {fileID: 7253692181240780174, guid: 180f9c5d4a1e80c4fb0e0e8ddb694198, type: 3}
       propertyPath: m_Name
       value: Pulpit
