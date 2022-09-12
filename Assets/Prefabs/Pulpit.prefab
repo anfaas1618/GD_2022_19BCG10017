@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 449959508}
   - component: {fileID: 449959510}
   - component: {fileID: 449959509}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &449959508
 RectTransform:
@@ -186,12 +186,12 @@ GameObject:
   - component: {fileID: 7253692181240780175}
   - component: {fileID: 5871610012081934022}
   - component: {fileID: 1046330696}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Pulpit
   m_TagString: pulpit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7253692181240780178
 Transform:
@@ -237,7 +237,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73a0c911e36753c409523c2c4d50a670, type: 2}
+  - {fileID: 2100000, guid: 35d1221f9a93c8347951bdf2f439630d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
